@@ -1,2 +1,2 @@
 # DataBase-Management-Python-Flask
-This project is a web application developed using Python and Flask, designed to manage data within a database.
+This project is a web application developed using Python and Flask, designed to manage data within a database. The application enables users to perform CRUD (Create, Read, Update, Delete) operations through a user-friendly interface. Users can add new records, modify existing entries, and delete data as needed. Flask handles the backend logic, connecting to the database and managing routes, while templates ensure a clean and intuitive user experience. The project is ideal for managing structured data efficiently and securely in a web environment.
