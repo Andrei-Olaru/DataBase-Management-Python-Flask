@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baza de date muzică</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Salut! Bine ai venit în baza de date MUZICA DB!</h1>
+    <br><br>
+    <div style="text-align: center;">
+        <a href="{{ url_for('melodii') }}" class="button">Vizualizare tabelă Melodii</a>
+        <a href="{{ url_for('muzicieni') }}" class="button">Vizualizare tabelă Muzicieni</a>
+        <a href="{{ url_for('albume') }}" class="button">Vizualizare tabelă Albume</a>
+    </div>
+</body>
+</html>

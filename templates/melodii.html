@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelă Melodii</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Tabelă Melodii</h1>
+    <div>
+        <a href="{{ url_for('adauga_melodie') }}" class="button">Adaugă Melodie</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titlu</th>
+                <th>Gen</th>
+                <th>An Lansare</th>
+                <th>Acțiuni</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for melodie in melodii %}
+            <tr>
+                <td>{{ melodie.id_melodie }}</td>
+                <td>{{ melodie.titlu }}</td>
+                <td>{{ melodie.gen }}</td>
+                <td>{{ melodie.an_lansare }}</td>
+                <td>
+                    <a href="{{ url_for('modifica_melodie', id=melodie.id_melodie) }}" class="action-link">Modifică</a>
+                    <a href="{{ url_for('sterge_melodie', id=melodie.id_melodie) }}" class="action-link" onclick="return confirm('Ești sigur că vrei să ștergi acest album?');">Șterge</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="{{ url_for('index') }}" class="button">Înapoi</a>
+    </div>
+</body>
+</html>

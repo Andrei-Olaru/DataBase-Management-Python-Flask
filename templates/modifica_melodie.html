@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifică Melodie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Modifică Melodie</h1>
+    <form method="POST" class="form-container">
+        <label for="titlu">Titlu:</label>
+        <input type="text" id="titlu" name="titlu" value="{{ melodie.titlu }}" required>
+        
+        <label for="gen">Gen:</label>
+        <input type="text" id="gen" name="gen" value="{{ melodie.gen }}" required>
+        
+        <label for="an_lansare">An Lansare:</label>
+        <input type="number" id="an_lansare" name="an_lansare" value="{{ melodie.an_lansare }}" required>
+        
+        <button type="submit" class="button">Salvează</button>
+    </form>
+    <div style="text-align: center;">
+        <a href="{{ url_for('melodii') }}" class="button">Înapoi la lista melodiilor</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaugă Album</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Adaugă Album</h1>
+    <form method="POST" class="form-container">
+        <!-- Dropdown pentru ID Muzician -->
+        <label for="id_muzician">Muzician:</label>
+        <select id="id_muzician" name="id_muzician" required>
+            {% for muzician in muzicieni %}
+            <option value="{{ muzician.id_muzician }}">
+                <b>{{ muzician.id_muzician }}</b> - {{ muzician.nume }} {{ muzician.prenume }} ({{ muzician.instrument }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <!-- Dropdown pentru ID Melodie -->
+        <label for="id_melodie">Melodie:</label>
+        <select id="id_melodie" name="id_melodie" required>
+            {% for melodie in melodii %}
+            <option value="{{ melodie.id_melodie }}">
+                <b>{{ melodie.id_melodie }}</b> - {{ melodie.titlu }} ({{ melodie.gen }}, {{ melodie.an_lansare }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <!-- Input pentru Rol Muzician -->
+        <label for="rol_muzician">Rol Muzician:</label>
+        <input type="text" id="rol_muzician" name="rol_muzician" required>
+        
+        <button type="submit" class="button">Adaugă</button>
+    </form>
+    <div style="text-align: center;">
+        <a href="{{ url_for('albume') }}" class="button">Înapoi la lista albumelor</a>
+    </div>
+</body>
+</html>

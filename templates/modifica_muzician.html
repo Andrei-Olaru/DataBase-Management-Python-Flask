@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifică Muzician</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Modifică Muzician</h1>
+    <form method="POST" class="form-container">
+        <label for="nume">Nume:</label>
+        <input type="text" id="nume" name="nume" value="{{ muzician.nume }}" required>
+        
+        <label for="prenume">Prenume:</label>
+        <input type="text" id="prenume" name="prenume" value="{{ muzician.prenume }}" required>
+        
+        <label for="instrument">Instrument:</label>
+        <input type="text" id="instrument" name="instrument" value="{{ muzician.instrument }}" required>
+        
+        <label for="data_nasterii">Data Nașterii:</label>
+        <input type="date" id="data_nasterii" name="data_nasterii" value="{{ muzician.data_nasterii }}" required>
+        
+        <button type="submit" class="button">Salvează</button>
+    </form>
+    <div style="text-align: center;">
+        <a href="{{ url_for('muzicieni') }}" class="button">Înapoi la lista muzicienilor</a>
+    </div>
+</body>
+</html>
